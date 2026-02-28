@@ -1,0 +1,218 @@
+/* ============================================
+   Cosmic Living Library — Admin panel
+   ============================================ */
+
+.admin-screen {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Login */
+#screenLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 2.5rem;
+}
+
+.admin-title {
+  font-size: 1.75rem;
+  margin: 0 0 0.25rem;
+  text-align: center;
+}
+
+.admin-subtitle {
+  text-align: center;
+  opacity: 0.8;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-form .input-cosmic {
+  margin: 0;
+}
+
+.admin-error {
+  color: #e88;
+  font-size: 0.9rem;
+  margin: 0;
+  min-height: 1.2em;
+}
+
+/* Dashboard */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.admin-back {
+  color: var(--cosmic-gold-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.admin-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  padding: 1.25rem 1.75rem;
+  min-width: 120px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--cosmic-gold-soft);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.admin-actions {
+  margin-bottom: 1rem;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  padding: 0;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem 1rem;
+  text-align: right;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.admin-table th {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.admin-table img.cover-thumb {
+  width: 48px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.admin-table .btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  margin-left: 0.25rem;
+}
+
+/* Modal */
+.admin-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.admin-modal-content {
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.admin-modal-content h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.35rem;
+}
+
+.admin-modal-content label {
+  display: block;
+  margin: 1rem 0 0.4rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.admin-modal-content .input-cosmic,
+.admin-modal-content textarea {
+  width: 100%;
+  margin: 0;
+}
+
+.admin-modal-content select.input-cosmic {
+  cursor: pointer;
+}
+
+.upload-zone {
+  border: 2px dashed var(--glass-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-top: 0.25rem;
+}
+
+.upload-zone:hover,
+.upload-zone.drag-over {
+  border-color: var(--cosmic-glow);
+  background: rgba(157, 126, 201, 0.08);
+}
+
+.upload-zone.has-file {
+  border-color: var(--cosmic-gold);
+  color: var(--cosmic-gold-soft);
+}
+
+.upload-zone span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.admin-modal-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.admin-modal-buttons .btn-cosmic {
+  flex: 1;
+}

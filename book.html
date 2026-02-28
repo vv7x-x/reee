@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الكتاب | المكتبة الحية الكونية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Kufi+Arabic:wght@400;600;700&family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/cosmic.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/book.css" />
+</head>
+<body>
+  <div class="cosmic-bg"></div>
+  <div class="cosmic-rays"></div>
+
+  <header class="site-header glass-panel">
+    <nav class="nav-inner">
+      <a href="index.html" class="logo glow-text">المكتبة الحية الكونية</a>
+      <a href="index.html" class="btn-cosmic btn-sm">العودة</a>
+    </nav>
+  </header>
+
+  <main class="book-page">
+    <div class="book-loading" id="bookLoading">جاري تحميل الكتاب...</div>
+    <div class="book-error" id="bookError" hidden>لم يتم العثور على الكتاب.</div>
+
+    <article class="book-detail" id="bookDetail" hidden>
+      <div class="book-detail-cover-wrap">
+        <div class="book-3d-large glow-box">
+          <div class="cover">
+            <img id="bookCover" src="" alt="" />
+          </div>
+          <div class="spine"></div>
+        </div>
+      </div>
+      <div class="book-detail-content glass-panel-strong">
+        <h1 class="book-detail-title glow-text" id="bookTitle"></h1>
+        <div class="book-detail-meta" id="bookMeta"></div>
+        <p class="book-detail-desc" id="bookDesc"></p>
+        <div class="book-detail-actions">
+          <a href="#" class="btn-cosmic btn-glow" id="btnRead">قراءة</a>
+          <a href="#" class="btn-cosmic btn-glow" id="btnDownload">تحميل</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/api.js" type="module"></script>
+  <script src="js/cosmic.js"></script>
+  <script src="js/book.js" type="module"></script>
+</body>
+</html>

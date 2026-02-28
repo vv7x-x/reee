@@ -1,0 +1,142 @@
+/* ============================================
+   Cosmic Living Library — Main layout
+   ============================================ */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cosmic-gold-soft);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 40px rgba(201, 162, 39, 0.5), 0 0 60px rgba(157, 126, 201, 0.3);
+}
+
+/* Hero floating books (decorative 3D cards) */
+.hero-floating-books {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 4rem;
+}
+
+.hero-floating-books .book-card-3d {
+  opacity: 0.85;
+}
+
+.hero-floating-books .book-card-3d:nth-child(1) { animation-delay: 0s; }
+.hero-floating-books .book-card-3d:nth-child(2) { animation-delay: 0.5s; }
+.hero-floating-books .book-card-3d:nth-child(3) { animation-delay: 1s; }
+
+/* Library section */
+.library-section {
+  padding: 4rem 2rem 6rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  text-align: center;
+  margin: 0 0 1.5rem;
+  color: var(--cosmic-gold-soft);
+}
+
+.library-loading,
+.library-empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--cosmic-glow);
+  opacity: 0.9;
+}
+
+/* Book card link */
+.book-card-wrap {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+.book-card-wrap:hover {
+  color: var(--cosmic-gold-soft);
+}
+
+.book-card-wrap .book-title {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  max-width: 180px;
+}
+
+.book-card-wrap .book-meta {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+/* Footer */
+.site-footer {
+  margin: 0 1rem 1rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-floating-books {
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  .hero-floating-books .book-card-3d {
+    width: 120px;
+    height: 175px;
+  }
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+  }
+  .book-card-3d {
+    width: 140px;
+    height: 200px;
+  }
+  .book-card-wrap .book-title {
+    max-width: 140px;
+  }
+}

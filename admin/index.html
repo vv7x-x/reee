@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة الإدارة | المكتبة الحية الكونية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/cosmic.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="cosmic-bg"></div>
+  <div class="cosmic-rays"></div>
+
+  <div id="adminApp">
+    <!-- Login screen -->
+    <div class="admin-screen" id="screenLogin">
+      <div class="admin-login-box glass-panel-strong">
+        <h1 class="admin-title">لوحة الإدارة</h1>
+        <p class="admin-subtitle">المكتبة الحية الكونية</p>
+        <form id="loginForm" class="admin-form">
+          <input type="email" class="input-cosmic" name="email" placeholder="البريد الإلكتروني" required />
+          <input type="password" class="input-cosmic" name="password" placeholder="كلمة المرور" required />
+          <p class="admin-error" id="loginError"></p>
+          <button type="submit" class="btn-cosmic">دخول</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard (after login) -->
+    <div class="admin-screen" id="screenDashboard" hidden>
+      <header class="admin-header glass-panel">
+        <a href="../index.html" class="admin-back">← المكتبة</a>
+        <h1>لوحة الإدارة</h1>
+        <button type="button" class="btn-cosmic btn-sm" id="btnLogout">خروج</button>
+      </header>
+
+      <div class="admin-stats" id="adminStats">
+        <div class="stat-card glass-panel"><span class="stat-value" id="statBooks">0</span><span class="stat-label">كتب</span></div>
+        <div class="stat-card glass-panel"><span class="stat-value" id="statDownloads">0</span><span class="stat-label">تحميل</span></div>
+      </div>
+
+      <div class="admin-actions">
+        <button type="button" class="btn-cosmic btn-glow" id="btnAddBook">إضافة كتاب</button>
+      </div>
+
+      <div class="admin-table-wrap glass-panel">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>الغلاف</th>
+              <th>العنوان</th>
+              <th>التصنيف</th>
+              <th>المشاهدات</th>
+              <th>مدفوع</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Modal: Add/Edit Book -->
+      <div class="admin-modal" id="bookModal" hidden>
+        <div class="admin-modal-content glass-panel-strong">
+          <h2 id="bookModalTitle">إضافة كتاب</h2>
+          <form id="bookForm">
+            <input type="hidden" name="id" id="bookId" />
+            <label>العنوان</label>
+            <input type="text" class="input-cosmic" name="title" required />
+            <label>الوصف</label>
+            <textarea class="input-cosmic" name="description" rows="4"></textarea>
+            <label>التصنيف</label>
+            <input type="text" class="input-cosmic" name="category" value="general" />
+            <label>مدفوع</label>
+            <select class="input-cosmic" name="is_paid">
+              <option value="false">مجاني</option>
+              <option value="true">مدفوع</option>
+            </select>
+            <label>غلاف الكتاب (رفع صورة)</label>
+            <div class="upload-zone" id="coverUpload">
+              <span>اسحب الصورة هنا أو انقر للاختيار</span>
+              <input type="file" accept="image/*" name="cover" hidden />
+            </div>
+            <label>ملف PDF</label>
+            <div class="upload-zone" id="pdfUpload">
+              <span>اسحب PDF هنا أو انقر للاختيار</span>
+              <input type="file" accept=".pdf" name="pdf" hidden />
+            </div>
+            <p class="admin-error" id="bookFormError"></p>
+            <div class="admin-modal-buttons">
+              <button type="button" class="btn-cosmic" id="btnCancelBook">إلغاء</button>
+              <button type="submit" class="btn-cosmic btn-glow">حفظ</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/cosmic.js"></script>
+  <script src="../js/api.js" type="module"></script>
+  <script src="admin.js" type="module"></script>
+  <script>
+    if (window.createStarfield) window.createStarfield(document.body);
+  </script>
+</body>
+</html>
